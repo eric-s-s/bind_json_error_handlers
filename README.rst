@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.com/eric-s-s/bind_json_error_handlers.svg?branch=master
+    :target: https://travis-ci.com/eric-s-s/bind_json_error_handlers
+
 bind_json_error_handlers
 ========================
 
@@ -22,9 +25,10 @@ or:
 
 to use:
 
-.. code-block::python
+.. code-block:: python
 
     from bind_json_error_handler import bind_json_error_handler
     app = Flask(__name__)
     bind_json_error_handler(app)
 
+the end.
