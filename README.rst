@@ -1,6 +1,10 @@
 .. image:: https://travis-ci.com/eric-s-s/bind_json_error_handlers.svg?branch=master
     :target: https://travis-ci.com/eric-s-s/bind_json_error_handlers
 
+.. image:: https://coveralls.io/repos/github/eric-s-s/bind_json_error_handlers/badge.svg?branch=master
+    :target: https://coveralls.io/github/eric-s-s/bind_json_error_handlers?branch=master
+
+
 bind_json_error_handlers
 ========================
 
