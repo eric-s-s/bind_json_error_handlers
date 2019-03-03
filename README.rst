@@ -31,7 +31,7 @@ to use:
 
 .. code-block:: python
 
-    from bind_json_error_handlers.bind_json_error_handlers import bind_json_error_handlers
+    from bind_json_error_handlers import bind_json_error_handlers
     app = Flask(__name__)
     bind_json_error_handler(app)
 

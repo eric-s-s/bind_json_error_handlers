@@ -4,7 +4,7 @@ import unittest
 from flask import Flask
 from werkzeug.exceptions import default_exceptions
 
-from bind_json_error_handlers.bind_json_error_handlers import bind_json_error_handlers
+from bind_json_error_handlers import bind_json_error_handlers
 
 TEST_MESSAGE = 'my message'
 
