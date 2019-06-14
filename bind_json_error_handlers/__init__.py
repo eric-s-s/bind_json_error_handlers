@@ -12,7 +12,8 @@ def handle_error(error):
 
     if not isinstance(error, HTTPException):
         title = 'internal server error'
-        text = error.args[0]
+        text = str(error.args[0])
+        # text = error.args[0]
         status_code = 500
     else:
         title = error.name

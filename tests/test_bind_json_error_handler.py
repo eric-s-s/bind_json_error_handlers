@@ -1,5 +1,6 @@
 import json
 import unittest
+import requests
 
 from flask import Flask
 from werkzeug.exceptions import default_exceptions
@@ -23,6 +24,11 @@ def create_test_app():
     @app.route('/hello')
     def hello():
         return 'hello'
+
+    @app.route('/max_retry')
+    def get_max_retry():
+        for port in range(80, 8080):
+            requests.get(f'http://localhost:{port}')
 
     return app
 
@@ -100,3 +106,18 @@ class TestBindJSONErrorHandler(unittest.TestCase):
                 self.assertEqual(response_json['error_type'], name)
                 self.assertEqual(response_json['status_code'], code)
                 self.assertEqual(response_json['text'], TEST_MESSAGE)
+
+    def test_bind_json_error_handlers_weird_corner_case_of_requests_timeout_error(self):
+        test_app = create_test_app()
+        bind_json_error_handlers(test_app)
+        client = test_app.test_client()
+
+        response = client.get('/max_retry')
+        self.assertEqual(response.status_code, 500)
+        expected_json = {'error_type': 'ConnectionError',
+                         'status_code': 500,
+                         'title': 'internal server error'
+                         }
+        actual_json = response.get_json()
+        expected_json['text'] = actual_json['text']
+        self.assertEqual(actual_json, expected_json)
