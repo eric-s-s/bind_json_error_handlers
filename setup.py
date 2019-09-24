@@ -1,19 +1,17 @@
 from setuptools import setup, find_packages
 
 
-def readme():
-    with open('README.rst') as f:
-        return f.read()
+with open("README.md", "r") as fh:
+    long_description = fh.read()
 
-
-VERSION = '1.1'
+VERSION = '1.1.1'
 
 setup(name='bind_json_error_handlers',
       version=VERSION,
       description='make app return json errors',
-      long_description=readme(),
+      long_description=long_description,
       keywords='',
-      url='http://github.com/eric-s-s/paragraph_generator',
+      url='https://github.com/eric-s-s/bind_json_error_handlers',
       author='Eric Shaw',
       author_email='shaweric01@gmail.com',
       license='MIT',
