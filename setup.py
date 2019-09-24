@@ -1,12 +1,10 @@
 from setuptools import setup, find_packages
 
 
-def readme():
-    with open('README.rst') as f:
-        return f.read()
+with open("README.rst", "r") as fh:
+    long_description = fh.read()
 
-
-VERSION = '1.1.1'
+VERSION = '1.1.2'
 
 setup(name='bind_json_error_handlers',
       version=VERSION,
