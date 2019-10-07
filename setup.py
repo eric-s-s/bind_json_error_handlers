@@ -23,5 +23,6 @@ setup(name='bind_json_error_handlers',
           'Programming Language :: Python :: 3.7',
       ],
       packages=find_packages(exclude=['tests']),
+      install_requires=['flask', 'requests'],
       include_package_data=True,
       zip_safe=False)
